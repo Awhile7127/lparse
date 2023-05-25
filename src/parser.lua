@@ -12,7 +12,8 @@ function parser.parse_arguments(cli_args, args)
         for expected_arg, _ in pairs(args) do
 
             -- COMPARE CLI TO EXPECTED ARGUMENT
-            if (current_passed_arg == "--" .. expected_arg) then
+            if (current_passed_arg == "--" .. expected_arg) or
+            (current_passed_arg == "-" .. string.sub(expected_arg, 1, 1)) then
                 args:add_argument(expected_arg, cli_args[i + 1])
             end
         end
