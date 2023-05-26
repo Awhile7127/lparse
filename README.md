@@ -5,8 +5,17 @@
 
 Simple command-line argument parser for Lua.
 
-**This does not currently adhere to UNIX convention,
-supporting only `--arg` format.**
+**This currently adheres to UNIX convention,
+supporting `--arg` and `-a` format.**
+
+P.S: Don't use unflagged args because it's bad practice
+and makes my job harder! For instance:
+
+```
+./src/main.lua 1 2 3
+```
+
+*What are 1, 2 and 3?!*
 
 
 ## Usage
